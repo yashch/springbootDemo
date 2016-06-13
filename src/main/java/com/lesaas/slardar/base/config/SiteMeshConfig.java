@@ -28,17 +28,13 @@ public class SiteMeshConfig extends ConfigurableSiteMeshFilter {
         builder.addExcludedPath("/login");
         
         //decorator 需要渲染的路径
-
+        String DEFAULT=DEFAULT_DIR+"/default.jsp";
+        builder.addDecoratorPath("/*", DEFAULT);
+        
         //第一套模版页
         String DEFAULT1=DEFAULT_DIR+"/default1.jsp";
-        builder.addDecoratorPath("/slardar/registControl/payment*", DEFAULT1);
-        builder.addDecoratorPath("/slardar/registControl/OrgpayMent", DEFAULT1);
-        builder.addDecoratorPath("/slardar/registControl/YFstep1", DEFAULT1);
-        builder.addDecoratorPath("/slardar/bridgePay/recharge", DEFAULT1);
-        builder.addDecoratorPath("/slardar/bridgePay/toPay*", DEFAULT1);
-        builder.addDecoratorPath("/slardar/registControl/testError", DEFAULT1);
-        builder.addDecoratorPath("/slardar/sitemeshdemo", DEFAULT1);
         builder.addDecoratorPath("/slardar/demo/*", DEFAULT1);
+        
 
         
         //第二套模版页

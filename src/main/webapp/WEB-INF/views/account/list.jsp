@@ -11,37 +11,28 @@
 <title>添加</title>
 </head>
 <div id="content">
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span12">
-				<!-- Test Schedule step     -->
-				<div class="widget-box">
-					<div class="widget-title" style="text-align:center;">
-						<span class="icon"> <i class="icon-th"></i>
-						</span>
-						<h5>列表</h5>
-					</div>
-					
-					<form action="${ctx }/demo/add" method="post" id="addForm"
-							class="form-horizontal form-validation" >
-					<div class="widget-content" id="step1">
-						<c:if test="${!empty list }">
-							<c:forEach items="${list }" var="account">
-								<p>${account.id }---${account.name }----${account.proId }</p>
-							</c:forEach>
-						</c:if>
-						<c:if test="${empty list }">
-							<h1>没有记录</h1>
-						</c:if>
-					</div>
-					<!-- end step1 -->
-					
-					</form>
-				</div>
-				<!-- end Test Schedule step     -->
-			</div>
-			<!-- end span12 -->
-		</div>
-	</div>
+	<c:if test="${!empty list }">
+		<table class="table table-condensed table-striped ">
+		    <tr>
+		    	<th>ID</th>
+		    	<th>项目编号</th>
+		    	<th>姓名</th>
+		    	<th>余额</th>
+		    	<th>创建时间</th>
+		    </tr>
+			<c:forEach items="${list }" var="account">
+			   <tr>
+			   	<td>${account.id }</td>
+			   	<td>${account.name }</td>
+			   	<td>${account.proId }</td>
+			   	<td>${account.balance }</td>
+			   	<td>${account.createTime }</td>
+			   </tr>
+			</c:forEach>
+		</table>
+	</c:if>
+	<c:if test="${empty list }">
+		<h1>没有记录</h1>
+	</c:if>
 	<!-- end content -->
 </div>

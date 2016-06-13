@@ -11,48 +11,25 @@
 <title>添加</title>
 </head>
 <div id="content">
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span12">
-				<!-- Test Schedule step     -->
-				<div class="widget-box">
-					<div class="widget-title" style="text-align:center;">
-						<span class="icon"> <i class="icon-th"></i>
-						</span>
-						<h5>添加</h5>
-					</div>
-					
-					<form action="${ctx }/demo/add" method="post" id="addForm"
-							class="form-horizontal form-validation" >
-					<div class="widget-content" id="step1">
-						
-							<div class="control-group">
-								<label class="control-label" style="width:150px;">项目编号：</label>
-								<div class="controls"  style="margin-left:150px;">
-									<input type="text" TABINDEX="1" placeholder="最多输入4个字符" maxLength="4"
- 										class="required {required:true,rangelength:[1,4],messages: { rangelength: $.validator.format('最多可填{0}~{1}个字符')}}"   name="proId" id="proId" />
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" style="width:150px;">姓名：</label>
-								<div class="controls" style="margin-left:150px;">
-									<input type="text" TABINDEX="2" maxlength="30" placeholder="最多输入30个字符" class="required {required:true,rangelength:[1,30],messages: { rangelength: $.validator.format('最多可填{0}~{1}个字符')}}" name="name" id="name"/>
-								</div>
-							</div>
-							<div class="control-group" id="div_next1">
-								<div class="controls" style="text-align:center;">
-								<input type="submit" class="btn " value="添加"/>
-								</div>
-							</div>
-					</div>
-					<!-- end step1 -->
-					
-					</form>
-				</div>
-				<!-- end Test Schedule step     -->
-			</div>
-			<!-- end span12 -->
-		</div>
-	</div>
-	<!-- end content -->
+	<form action="${ctx }/demo/add" method="post" id="addForm" class="form-horizontal form-validation" >
+	  <div class="control-group">
+	    <label class="control-label" for="proId">项目编号：</label>
+	    <div class="controls">
+	      <input type="text" TABINDEX="1" placeholder="最多输入4个字符" maxLength="4"   name="proId" id="proId"
+	 			class="required {required:true,rangelength:[1,4],messages: { rangelength: $.validator.format('最多可填{0}~{1}个字符')}}"  />
+	    </div>
+	  </div>
+	  <div class="control-group">
+	    <label class="control-label" for="name">姓名：</label>
+	    <div class="controls">
+	      <input type="text" TABINDEX="2" maxlength="30" placeholder="最多输入10个字符"  name="name" id="name"
+	      		class="required {required:true,rangelength:[1,10],messages: { rangelength: $.validator.format('最多可填{0}~{1}个字符')}}" />
+	    </div>
+	  </div>
+	  <div class="control-group">
+	    <div class="controls">
+	      <input type="submit" class="btn btn-primary" value="添加"/>
+	    </div>
+	  </div>
+	</form>
 </div>
