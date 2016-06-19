@@ -82,7 +82,12 @@ public class AccountDemoService {
 	 */
 	public String  save(AccountPageModel accountPage){
 		Account account=new Account();
-		account.setId(ToolUtils.getUUID());
+		if(!ToolUtils.isNotEmpty(accountPage.getId())){
+			account.setId(ToolUtils.getUUID());
+		}else{
+			account.setId(accountPage.getId());
+		}
+		
 		account.setProId(accountPage.getProId());
 		account.setName(accountPage.getName());
 		account.setCreateTime(new Date());
@@ -102,6 +107,7 @@ public class AccountDemoService {
 		List<Account> accountList=new ArrayList<Account>();
 		accountList=accountRep.findAll();
 		for(int i=0;i<accountList.size();i++){
+			
 			accountList.get(i).setProId("");
 		}
 		accountRep.save(accountList);
