@@ -26,7 +26,6 @@
 		<commons-lang3.version>3.3.2</commons-lang3.version>
 		<commons-codec.version>1.9</commons-codec.version>
 		<mybatis-spring.version>1.2.2</mybatis-spring.version>
-		<mybatis.version>3.2.7</mybatis.version>
 		<alibaba.druid.version>1.0.14</alibaba.druid.version>
 		<ehcache.version>2.6.8</ehcache.version>
 		<sitemesh.version>3.0.1</sitemesh.version>
@@ -76,11 +75,18 @@
         </dependency>
         
         <!-- mybatis -->
-        <dependency>
+       <!--  <dependency>
 		    <groupId>org.mybatis.spring.boot</groupId>
 		    <artifactId>mybatis-spring-boot-starter</artifactId>
 		    <version>1.0.0</version>
+		</dependency> -->
+		<dependency>
+		    <groupId>org.mybatis.spring.boot</groupId>
+		    <artifactId>mybatis-spring-boot-starter</artifactId>
+		   <!--  请不要使用1.0.0版本，因为还不支持拦截器插件 -->
+		    <version>1.1.1</version>
 		</dependency>
+		
 		
 		<!-- embed -->
 		<dependency>

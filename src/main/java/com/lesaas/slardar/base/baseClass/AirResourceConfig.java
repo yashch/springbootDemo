@@ -2,12 +2,15 @@ package com.lesaas.slardar.base.baseClass;
 
 
 
-import javax.ws.rs.ApplicationPath;
-
 import org.glassfish.jersey.CommonProperties;
 import org.glassfish.jersey.client.ClientProperties;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
+import org.springframework.stereotype.Component;
+
+import com.lesaas.slardar.demo.controller.DemoJersey;
+
+import javax.ws.rs.ApplicationPath;
 
 /**
  * <p>AirResourceConfig class.</p>
@@ -15,7 +18,8 @@ import org.glassfish.jersey.server.ResourceConfig;
  * @author hanl
  * @version $Id: $Id
  */
-@ApplicationPath("/webapi/*")
+@ApplicationPath("/webapi")
+@Component
 public class AirResourceConfig extends ResourceConfig {
     /**
      * <p>Constructor for AirResourceConfig.</p>
@@ -44,5 +48,6 @@ public class AirResourceConfig extends ResourceConfig {
     	
         packages("com.lesaas.magnus");
         register(JacksonFeature.class);
+        register(DemoJersey.class);
     }   
 }

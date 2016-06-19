@@ -13,3 +13,5 @@ create table PAY_ACCOUNT (
 	available_balance DOUBLE default 0,
 	primary key (id)
 ) engine=InnoDB;
+
+insert PAY_ACCOUNT(id,name,pro_id) values('t1','t1','t_p1');

@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lesaas.slardar.base.util.ToolUtils;
-import com.lesaas.slardar.demo.dao.IAccountDemoDao;
+import com.lesaas.slardar.demo.dao.AccountDemoDao;
 import com.lesaas.slardar.demo.dao.IAccountDemoRepository;
 import com.lesaas.slardar.demo.pageModel.AccountPageModel;
 
@@ -29,7 +29,7 @@ public class AccountDemoService {
 	@Autowired
 	private IAccountDemoRepository accountRep;//account jpa 接口
 	@Autowired
-	private IAccountDemoDao accountDao;//mybatis dao
+	private AccountDemoDao accountDao;//mybatis dao
 	
 	public List<Account> getList(){
 		
@@ -37,17 +37,14 @@ public class AccountDemoService {
 		return accountPageList;
 		
 	}
-	public void getList(String id,String proId){
+	public List<AccountPageModel> getList(String id,String proId){
 		Map<String,Object> param=new HashMap<String,Object>();
 		param.put("id", id);
 		param.put("proId", proId);
 		
 		List<AccountPageModel> accountPageList=accountDao.getAccountList(param);
-		if(ToolUtils.isNotEmpty(accountPageList)&&accountPageList.size()>0){
-			AccountPageModel pageModel=accountPageList.get(0);
-			System.out.println("Mybatis find list count:"+accountPageList.size());
-			System.out.println("the first data id:"+pageModel.getId()+"  proId:"+pageModel.getProId());
-		}
+		
+		return accountPageList;
 	}
 	
 	/**

@@ -69,6 +69,13 @@ public class DemoController {
 		
 	}
 	
+	@RequestMapping(value="/test")
+	@ResponseBody
+	public String test(){
+		accountService.getList(null, "a1");
+		return "ok";
+	}
+	
 	
 	/**
 	 * add/delete

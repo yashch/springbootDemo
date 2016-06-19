@@ -1,6 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<c:set var="csr" value="${pageContext.request.servletPath}"/>
 
 <header class="navbar header--navbar">
 	<div class="navbar-inner">
@@ -20,9 +21,7 @@
 				<li class="navbar-link"><a href="${ctx }/demo">Home</a>
 				</li>
 				<li class="navbar-link"><a href="${ctx }/demo/add">Add</a></li>
-				<li class="navbar-link ">
-					<a href="${ctx }/demo/list">List</a>
-				</li>
+				<li class="navbar-link "><a href="${ctx }/demo/list">List</a></li>
 				
 			</ul>
 		</div>

@@ -2,6 +2,7 @@ package com.lesaas.slardar;
 
 import javax.servlet.Filter;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -21,7 +22,8 @@ import com.lesaas.slardar.base.config.SiteMeshConfig;
  *
  */
 @SpringBootApplication
-@ComponentScan(basePackages={"com.lesaas.slardar","org.springside.modules.session","org.springside.modules.base.jersey"})
+//@MapperScan(basePackages = {"com.lesaas.slardar.demo.maps","com.lesaas.slardar.demo.maps.AcountDemoMapper.xml"})  
+@ComponentScan(basePackages={"com.lesaas.slardar"})
 public class SlardarApplication extends SpringBootServletInitializer	{
 	
 	@Override

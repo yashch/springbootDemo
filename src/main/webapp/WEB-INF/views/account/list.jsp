@@ -23,8 +23,8 @@
 			<c:forEach items="${list }" var="account">
 			   <tr>
 			   	<td>${account.id }</td>
-			   	<td>${account.name }</td>
 			   	<td>${account.proId }</td>
+			   	<td>${account.name }</td>
 			   	<td>${account.balance }</td>
 			   	<td>${account.createTime }</td>
 			   </tr>
