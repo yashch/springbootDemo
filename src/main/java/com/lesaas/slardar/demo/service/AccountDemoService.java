@@ -31,12 +31,23 @@ public class AccountDemoService {
 	@Autowired
 	private AccountDemoDao accountDao;//mybatis dao
 	
+	/**
+	 * 获取所有数据
+	 * @return
+	 */
 	public List<Account> getList(){
 		
 		List<Account> accountPageList=accountRep.findAll();
 		return accountPageList;
 		
 	}
+	
+	/**
+	 * 根据id、proid查询数据，mybatis
+	 * @param id
+	 * @param proId
+	 * @return
+	 */
 	public List<AccountPageModel> getList(String id,String proId){
 		Map<String,Object> param=new HashMap<String,Object>();
 		param.put("id", id);
@@ -97,6 +108,10 @@ public class AccountDemoService {
 		return account.getId();
 	}
 	
+	/**
+	 * 删除指定id数据
+	 * @param id
+	 */
 	public void deleteByAccountId(String id){
 		accountRep.deleteById(id);
 		System.out.println("delete account id:"+id);
