@@ -18,11 +18,29 @@
 			      </div>
 			</div>
 			<ul class="nav pull-right">
-				<li class="navbar-link"><a href="${ctx }/demo">Home</a>
-				</li>
-				<li class="navbar-link"><a href="${ctx }/demo/add">Add</a></li>
+				<li class="navbar-link "><a href="${ctx }/demo">Home</a></li>
+				<li class="navbar-link "><a href="${ctx }/demo/add">Add</a></li>
 				<li class="navbar-link "><a href="${ctx }/demo/list">List</a></li>
-				
+				<li class="dropdown ">
+				    <a class="dropdown-toggle"
+				       data-toggle="dropdown"
+				       href="#">Actuator<b class="caret"></b>
+				    </a>
+				    <ul class="dropdown-menu">
+				      <li class="navbar-link "><a href="${ctx }/health">Health</a></li>
+				      <li class="navbar-link "><a href="${ctx }/trace">Trace</a></li>
+				      <li class="navbar-link "><a href="${ctx }/info">Info</a></li>
+				      <li class="navbar-link "><a href="${ctx }/env">Env</a></li>
+				      <li class="navbar-link "><a href="${ctx }/metrics">Metrics</a></li>
+				      <li class="navbar-link "><a href="${ctx }/dump">Dump</a></li>
+				      <li class="navbar-link "><a href="${ctx }/mappings">Mappings</a></li>
+				      <li class="navbar-link "><a href="${ctx }/autoconfig">Autoconfig</a></li>
+				      <li class="navbar-link "><a href="${ctx }/configprops">Configprops</a></li>
+				      <%-- <li class="navbar-link "><a href="${ctx }/dump">Dump</a></li>
+				      <li class="navbar-link "><a href="${ctx }/dump">Dump</a></li> --%>
+				      
+				    </ul>
+				  </li>
 			</ul>
 		</div>
 	</div>
