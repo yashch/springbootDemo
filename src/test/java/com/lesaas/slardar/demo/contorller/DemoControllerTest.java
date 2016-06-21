@@ -24,7 +24,13 @@ import org.springframework.web.context.WebApplicationContext;
 import com.lesaas.slardar.SlardarApplication;
 import com.lesaas.slardar.demo.pageModel.AccountPageModel;
 
-
+/**
+ * 
+ * @ClassName: DemoControllerTest
+ * @Description: controller层测试
+ * @author: ysc
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes=SlardarApplication.class)
 @WebIntegrationTest(randomPort = true)
@@ -90,6 +96,21 @@ public class DemoControllerTest {
     	.andDo(MockMvcResultHandlers.print());
     	
     	Assert.assertThat(out.toString(), Matchers.containsString("View name = redirect:/demo/list"));
+    }
+    
+    /**
+     * 列表页测试
+     * @throws Exception 
+     */
+    @Test
+    public void listTest() throws Exception{
+    	
+    	mockMvc.perform(MockMvcRequestBuilders.get("/demo/list"))
+    	.andExpect(MockMvcResultMatchers.status().isOk())
+    	.andDo(MockMvcResultHandlers.print());
+    	
+    	Assert.assertThat(out.toString(), Matchers.containsString("View name = account/list"));
+    	
     }
 	
 	

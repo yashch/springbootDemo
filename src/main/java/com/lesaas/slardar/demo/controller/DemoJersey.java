@@ -14,6 +14,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.lesaas.slardar.demo.pageModel.AccountPageModel;
 import com.lesaas.slardar.demo.service.AccountDemoService;
 
+/**
+ * 
+ * @ClassName: DemoJersey
+ * @Description: RESTFUL WebService jersey示例
+ * @author: ysc
+ *
+ */
 @Path("/jerDemo")
 public class DemoJersey {
 	
@@ -27,7 +34,7 @@ public class DemoJersey {
 	@Path("/get")
 	@GET
 	public String get(){
-		System.out.println("------------");
+		System.out.println("jersey get method");
 		return "jerDemo";
 	}
 	

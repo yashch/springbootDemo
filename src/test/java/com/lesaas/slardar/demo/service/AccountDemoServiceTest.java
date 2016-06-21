@@ -18,6 +18,13 @@ import com.lesaas.slardar.SlardarApplication;
 import com.lesaas.slardar.demo.entity.Account;
 import com.lesaas.slardar.demo.pageModel.AccountPageModel;
 
+/**
+ * 
+ * @ClassName: AccountDemoServiceTest
+ * @Description: service层测试
+ * @author: ysc
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes=SlardarApplication.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
