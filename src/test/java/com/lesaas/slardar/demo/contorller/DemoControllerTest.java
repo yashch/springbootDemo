@@ -10,7 +10,6 @@ import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.OutputCapture;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.WebIntegrationTest;
@@ -33,9 +32,6 @@ public class DemoControllerTest {
 	
 	@ClassRule
 	public static OutputCapture out = new OutputCapture();
-	
-	@Value("${local.server.port}")
-	private int port;//测试用例的随机端口
 	
 	@Autowired  
     private WebApplicationContext wac;  

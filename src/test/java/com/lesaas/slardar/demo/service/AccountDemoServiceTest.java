@@ -60,11 +60,6 @@ public class AccountDemoServiceTest {
 		Assert.assertThat(out.toString(), Matchers.containsString("Save Account Id:"+id));
 	}
 	
-	@Test
-	public void getListTest(){
-		System.out.println("-----------------1---------------");
-	}
-	
 	/**
 	 * proId条件查询测试
 	 */
