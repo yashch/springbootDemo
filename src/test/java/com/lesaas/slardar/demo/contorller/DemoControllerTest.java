@@ -91,6 +91,21 @@ public class DemoControllerTest {
     	
     	Assert.assertThat(out.toString(), Matchers.containsString("View name = redirect:/demo/list"));
     }
+    
+    /**
+     * 列表页测试
+     * @throws Exception 
+     */
+    @Test
+    public void listTest() throws Exception{
+    	
+    	mockMvc.perform(MockMvcRequestBuilders.get("/demo/list"))
+    	.andExpect(MockMvcResultMatchers.status().isOk())
+    	.andDo(MockMvcResultHandlers.print());
+    	
+    	Assert.assertThat(out.toString(), Matchers.containsString("View name = account/list"));
+    	
+    }
 	
 	
 }
