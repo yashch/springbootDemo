@@ -36,9 +36,9 @@
 				      <li class="navbar-link "><a href="${ctx }/mappings">Mappings</a></li>
 				      <li class="navbar-link "><a href="${ctx }/autoconfig">Autoconfig</a></li>
 				      <li class="navbar-link "><a href="${ctx }/configprops">Configprops</a></li>
-				      <%-- <li class="navbar-link "><a href="${ctx }/dump">Dump</a></li>
-				      <li class="navbar-link "><a href="${ctx }/dump">Dump</a></li> --%>
-				      
+				      <li class="navbar-link "><a href="${ctx }/beans">Beans</a></li>
+				      <li class="navbar-link "><a href="${ctx }/shutdown">Shutdown</a></li>
+				      <%-- <li class="navbar-link "><a href="${ctx }/dump">Dump</a></li> --%>
 				    </ul>
 				  </li>
 			</ul>

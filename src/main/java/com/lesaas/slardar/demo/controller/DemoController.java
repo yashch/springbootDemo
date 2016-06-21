@@ -37,11 +37,34 @@ public class DemoController {
 		return "account/index";
 	}
 	
+	/**
+	 * 添加页面显示
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value="/add")
 	public String add(Model model){
 		return "account/add";
 	}
 	
+	/**
+	 * 添加提交，并且重定向到列表页面
+	 * @return
+	 */
+	@RequestMapping(value="/add",method=RequestMethod.POST)
+	public String addNewAccount(Model model,AccountPageModel pageModel,RedirectAttributes redirect){
+		//执行保存
+		String id=accountService.save(pageModel);
+		//重定向到列表页面
+		return "redirect:/demo/list";
+	}
+	
+	
+	/**
+	 * 列表页面显示
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value="list")
 	public String list(Model model){
 		
@@ -74,23 +97,6 @@ public class DemoController {
 	public String test(){
 		accountService.getList(null, "a1");
 		return "ok";
-	}
-	
-	
-	/**
-	 * add/delete
-	 * @return
-	 */
-	@RequestMapping(value="/add",method=RequestMethod.POST)
-	//@ResponseBody
-	public String addNewAccount(Model model,AccountPageModel pageModel,RedirectAttributes redirect){
-		String id=accountService.save(pageModel);
-		//mybatis test
-		//accountService.getList(id, null);
-		//accountService.deleteByAccountId(id);
-		//mybatis test
-		//accountService.getList(id, null);
-		return "redirect:/demo/list";
 	}
 	
 	@RequestMapping(value="/addList")
