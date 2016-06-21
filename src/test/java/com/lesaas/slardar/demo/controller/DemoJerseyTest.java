@@ -1,4 +1,4 @@
-package com.lesaas.slardar.demo.contorller;
+package com.lesaas.slardar.demo.controller;
 
 import org.hamcrest.Matchers;
 import org.junit.After;
